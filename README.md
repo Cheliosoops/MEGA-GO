@@ -15,3 +15,4 @@ Code are placed at the directory namely the MEGA-GO, you can simply run "**pytho
 '--pooling', (the operation mode in adaSAB);<br />
 '--batch_size'.<br />
 
+
