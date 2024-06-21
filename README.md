@@ -1,2 +1,2 @@
 # MEGA-GO
-![image](https://github.com/Cheliosoops/MEGA-GO/model.png)
+![image](./https://github.com/Cheliosoops/MEGA-GO/model.png)
