@@ -66,8 +66,8 @@ def train(config, task, suffix):
         model.eval()
         y_pred_all = []
         n_nce_all = []
-        y_pred_hot_all = []
-        y_pred_cold_all = []
+        y_pred_alpha_all = []
+        y_pred_beta_all = []
         with torch.no_grad():
             for idx_batch, batch in enumerate(val_loader):
                 y_pred,y_pred_alpha,y_pred_beta = model(batch[0].to(config.device),idx_batch,ith_epoch)
