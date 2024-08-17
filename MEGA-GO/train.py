@@ -81,7 +81,10 @@ def train(config, task, suffix):
             eval_loss = bce_loss(y_pred_all, y_true_all).mean() + bce_loss(y_pred_alpha_all, y_true_all).mean() + bce_loss(y_pred_beta_all, y_true_all).mean()
             
                 
-            aupr = metrics.average_precision_score(y_true_all.numpy(), y_pred_all.numpy(), average="samples")
+            aupr1 = metrics.average_precision_score(y_true_all.numpy(), y_pred_all.numpy(), average="samples")
+            aupr2 = metrics.average_precision_score(y_true_all.numpy(), y_alpha_all.numpy(), average="samples")
+            aupr3 = metrics.average_precision_score(y_true_all.numpy(), y_beta_all.numpy(), average="samples")
+            aupr = aupr1 + aupr2 + aupr3
             val_aupr.append(aupr)
             log(f"{ith_epoch} VAL_epoch ||| loss: {round(float(eval_loss),3)} ||| aupr: {round(float(aupr),3)}")
             val_loss.append(eval_loss.numpy())
